@@ -3,30 +3,31 @@ package virtualpet;
 public class VirtualPet {
 
 	// VirtualPet bobTheDragon = new VirtualPet();
-	// instance variables
+	// instance variables - state of the pet
 
 	private String nameOfPet;
 	private int hungerLevel;
 	private int thirstLevel;
-	private int wasteLevel;
+	private int fireLevel;
 	private int boredomLevel;
 	private int sicknessLevel;
 
-	// Constructor
+	// Constructor = behavior of pet
 	public VirtualPet() {
 		this.nameOfPet = "Bob the Dragon";
 		this.hungerLevel = 80;
 		this.thirstLevel = 70;
-		this.wasteLevel = 50;
+		this.fireLevel = 50;
 		this.boredomLevel = 60;
 		this.sicknessLevel = 4;
+		
 	}
 
 	public VirtualPet(String nameOfPet) {
 		this.nameOfPet = nameOfPet;
 	}
 
-	// Accessor of Method
+	// Getters of Method
 	public String getNameOfPet() {
 		return nameOfPet;
 	}
@@ -39,38 +40,50 @@ public class VirtualPet {
 		return thirstLevel;
 	}
 
-	public int getWasteLevel() {
-		return wasteLevel;
+	public int getFireLevel() {
+		return fireLevel;
 	}
 
-	public int boredomLevel() {
+	public int getboredomLevel() {
 		return boredomLevel;
 	}
 
-	public int sicknessLevel() {
+	public int getsicknessLevel() {
 		return sicknessLevel;
 	}
 
 	public void feed(int amountToFeed) {
-		if (hungerLevel<=100){
-		hungerLevel++;
-		System.out.println("Thank you for feeding " + nameOfPet + "!");
+		if (hungerLevel <= 100) {
+			hungerLevel++;
+			fireLevel++;
+			System.out.println("Thank you for feeding " + nameOfPet + "!");
 		} else {
 			System.out.println(nameOfPet + " cannot fit anymore creatures in his belly!");
 		}
 	}
+
 	public void water(int amountToWater) {
-		if (thirstLevel<=100) {
+		if (thirstLevel <= 100) {
 			thirstLevel++;
 			System.out.println("Thank you for the drink!");
-		}else {System.out.println(nameOfPet +"is full of water and won't be able to breath flames if he drinks anymore!");
+		} else {
+			System.out.println(nameOfPet + "is full of water and won't be able to breath flames if he drinks anymore!");
 		}
-		
-		
+		}
+	
+public void fire (int amountOfFire) {
+	if (fireLevel <=0) {
+		System.out.println("I don't have any fire to exhale!");
+	}else {
+		fireLevel--;
+		System.out.println("Thank you for relieving me of my fire! I feel much better now!");}
 
-//	@Override
-//	public String toString() {
-//		return nameOfPet + "Hunger is: " + hungerLevel + "\nThirst is: " + thirstLevel + "\nWaste is: " + wasteLevel
-//				+ "\nBoredom is: " + boredomLevel + "\nSickness is: " + sicknessLevel;
-	}
+	
+
+//		 @Override
+//		 public String toString(getStatus); {
+//		 return nameOfPet + "Hunger is: " + hungerLevel + "\nThirst is: " +
+//		 thirstLevel + "\nWaste is: " + fireLevel
+//		 + "\nBoredom is: " + boredomLevel + "\nSickness is: " + sicknessLevel;
+}		 
 }
