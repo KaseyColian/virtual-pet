@@ -18,8 +18,8 @@ public class VirtualPet {
 		this.hungerLevel = 60;
 		this.thirstLevel = 70;
 		this.fireLevel = 45;
-		this.boredomLevel = 60;
-		this.sicknessLevel = 5;	
+//		this.boredomLevel = 60;
+//		this.sicknessLevel = 5;	
 	}
 
 //	public VirtualPet(String nameOfPet) {
@@ -119,5 +119,5 @@ public void killPet() {
 		 public String toString() {
 			return nameOfPet + " is currently feeling: "+ "\nHunger: " + hungerLevel + "\nThirst: " +
 				 thirstLevel + "\nInternal Fire: " + fireLevel
-		 + "\nBoredom: " + boredomLevel + "\nSickness: " + sicknessLevel + "\nThank you so much!\n\n";}
+		 + "\nBoredom: " + boredomLevel + "\nSickness: " + sicknessLevel + "\n\nThank you so much!\n\n";}
 }
