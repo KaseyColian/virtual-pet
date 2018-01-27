@@ -10,22 +10,20 @@ public class VirtualPetApp {
 		String userEnteredNameOfPet = input.nextLine();
 		VirtualPet myPet = new VirtualPet(userEnteredNameOfPet);
 
-//		String optionEntered = "";
 		boolean gameInput = true;
 
 		System.out.println("Help " + myPet.getNameOfPet()
-				+ " become the happiest dragon ever! \nThe higher the levels get, the more upset " + myPet.getNameOfPet()
-				+ " gets.\nHowever, the more you interact with " + myPet.getNameOfPet() + ", the needier it will become. Good luck!");
+				+ " become the happiest dragon ever! \nThe higher the levels go, the more upset " + myPet.getNameOfPet()
+				+ " becomes.\nAnd the more you interact with " + myPet.getNameOfPet() + ", the needier it becomes. Good luck!");
 
 		do {
-			System.out.println("Select an option below:");
+			System.out.println("\nSelect an option below:\n");
 			System.out.println("Type 1 to feed " + myPet.getNameOfPet() + " tasty little critters.");
 			System.out.println("Type 2 to let " + myPet.getNameOfPet() + " drink from the pool of Elven tears.");
 			System.out.println("Type 3 to release the fire building inside of " + myPet.getNameOfPet() + ".");
 			System.out.println("Type 4 to check " + myPet.getNameOfPet() + "'s current state of existence.");
 			System.out.println("Type 5 to quit the game.");
 			String optionEntered = input.nextLine();  //crossed out string optionEntered declaration before do loop.  Added "String" in front of option entered to declare & initialize in one line.
-			myPet.tickEffect();
 //			myPet.killPet();
 			switch (optionEntered) {
 			case "1":
@@ -41,7 +39,7 @@ public class VirtualPetApp {
 				myPet.toString();
 				break;
 			case "5":
-				System.out.println("Goodbye, friend!");
+				System.out.println(myPet.getNameOfPet() + "says goodbye, friend!");
 				System.exit(0);
 				break;
 			default:
@@ -50,6 +48,7 @@ public class VirtualPetApp {
 
 			}
 			myPet.killPet();
+			myPet.tickEffect();
 			System.out.println(myPet.toString());
 		} while (gameInput = true);
 

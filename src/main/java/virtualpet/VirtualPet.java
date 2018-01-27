@@ -39,6 +39,24 @@ public class VirtualPet {
 	}
 
 	// Methods
+	// kills pet if fire, hunger, or thirst level hits 100.
+	public void killPet() {
+		if (fireLevel >= 100 || hungerLevel >= 100 || thirstLevel >= 100) {
+			System.out.println("You have killed " + nameOfPet
+					+ " because you neglected its other needs! Be a better dragon master next time!");
+			System.exit(0);
+		}
+	}
+	
+	// tick Method - with time- hunger, thirst, & fire level increase
+	public void tickEffect() {
+		if (fireLevel >=0 || hungerLevel >=0 || thirstLevel >=0) {
+			fireLevel = fireLevel + 6;
+			hungerLevel = hungerLevel + 6;
+			thirstLevel = thirstLevel + 6;
+		}
+		
+	}
 
 	// Feeding Method - Hunger goes down, Fire Level goes up
 	public void feed() {
@@ -48,6 +66,7 @@ public class VirtualPet {
 		} else {
 			hungerLevel = hungerLevel - 10;
 			fireLevel = fireLevel + 5;
+			killPet();
 			System.out.println("Thank you for feeding " + nameOfPet + "!");
 
 		}
@@ -56,47 +75,33 @@ public class VirtualPet {
 
 	// Watering Dragon - Thirst Level goes does, Fire Level goes down
 	public void water() {
-		if (thirstLevel <= 100) {
+		if (thirstLevel -10<=10) {
+			thirstLevel=0;
+			System.out.println(nameOfPet + "is full of Elven tears and won't be able to breath flames if it drinks anymore!");
+		} else {
 			thirstLevel = thirstLevel - 10;
 			fireLevel = fireLevel - 5;
-			System.out.println("Thank you for the drink!");
-		} else {
-			System.out.println(nameOfPet + "is full of water and won't be able to breath flames if he drinks anymore!");
+			killPet();
+			System.out.println(nameOfPet + " says thank you, it was starting to feel parched!");
 		}
 
 	}
 
 	// Amount of Fire needed to be released - Fire Level Goes Down
 	public void fire() {
-		if (fireLevel <= 0) {
-			System.out.println("I don't have any fire to exhale!");
+		if (fireLevel -10 <= 0) {
+			fireLevel=0;
+			System.out.println(nameOfPet + " has huffed and puffed and blew out all its fire!");
 		} else {
 			fireLevel = fireLevel - 10;
 			hungerLevel = hungerLevel + 5;
 			thirstLevel = thirstLevel - 5;
+			killPet();
+			System.out.println("Thank you for relieving me of my fire, I feel much better now!");
 
-			System.out.println("Thank you for relieving me of my fire! I feel much better now!");
 		}
 	}
 
-	// kills pet if fire, hunger, or thirst level hits 100.
-	public void killPet() {
-		if (fireLevel >= 100 || hungerLevel >= 100 || thirstLevel >= 100) {
-			System.out.println("You have killed " + nameOfPet
-					+ " because you neglected its other needs! Be a better dragon master!");
-			System.exit(0);
-		}
-	}
-
-	// tick Method - with time- hunger, thirst, & fire level increase
-	public void tickEffect() {
-		if (fireLevel >= 0 || hungerLevel > 0 || thirstLevel > 0) {
-			fireLevel = fireLevel + 3;
-			hungerLevel = hungerLevel + 3;
-			thirstLevel = thirstLevel + 3;
-		}
-
-	}
 
 	public void overallStatus() {
 		System.out.println("");
