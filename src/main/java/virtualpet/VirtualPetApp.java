@@ -12,6 +12,9 @@ public class VirtualPetApp {
 
 		String optionEntered = "";
 		boolean gameInput = true;
+		
+		
+		
 		do {
 			System.out.println(	"Help " + myPet.getNameOfPet() + " be the happiest dragon ever! Select an option below:");
 			System.out.println("Type 1 to feed me tasty little critters.");
@@ -20,7 +23,8 @@ public class VirtualPetApp {
 			System.out.println("Type 4 to check my current state of existence.");
 			System.out.println("Type 5 to quit the game.");
 			optionEntered = input.nextLine();
-			
+			myPet.timeEffect();
+			myPet.killPet();
 			switch (optionEntered) {
 			case "1":
 				myPet.feed();
@@ -39,12 +43,13 @@ public class VirtualPetApp {
 				System.exit(0);
 				break;
 			default:System.out.println(optionEntered + " was not a valid option.  Type a number from 1-5:");
-//			myPet.killPet();
+
+
+			}	
 			
-					
-			}
 			System.out.println(myPet.toString());
 		} while (gameInput = true);
+	
 		// default:
 		// System.out.println("Thanks for playing!");
 input.close();

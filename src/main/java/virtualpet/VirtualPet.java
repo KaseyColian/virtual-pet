@@ -15,9 +15,9 @@ public class VirtualPet {
 	// Constructor = behavior of pet beginningName is parameter
 	public VirtualPet(String beginningName) {
 		this.nameOfPet = beginningName;
-		this.hungerLevel = 20;
-		this.thirstLevel = 20;
-		this.fireLevel = 20;
+		this.hungerLevel = 50;
+		this.thirstLevel = 50;
+		this.fireLevel = 50;
 		// this.boredomLevel = 60;
 		// this.sicknessLevel = 5;
 	}
@@ -54,7 +54,7 @@ public class VirtualPet {
 	public void feed() {
 		if (hungerLevel < 100) {
 			hungerLevel=hungerLevel-10;
-			fireLevel=fireLevel+5;
+			fireLevel=fireLevel+10;
 			System.out.println("Thank you for feeding " + nameOfPet + "!");
 
 		} else {
@@ -81,7 +81,7 @@ public class VirtualPet {
 			System.out.println("I don't have any fire to exhale!");
 		} else {
 			fireLevel = fireLevel - 5;
-			hungerLevel = hungerLevel + 3;
+			hungerLevel = hungerLevel + 5;
 			thirstLevel = thirstLevel - 5;
 
 			System.out.println("Thank you for relieving me of my fire! I feel much better now!");
@@ -98,9 +98,9 @@ public class VirtualPet {
 
 	// tick Method - with time- hunger, thirst, & fire level increase
 	public void timeEffect() {
-		fireLevel=fireLevel+20;
-		hungerLevel++;
-		thirstLevel++;
+		fireLevel=fireLevel+3;
+		hungerLevel=hungerLevel+3;
+		thirstLevel=thirstLevel+3;
 	}
 
 	public void overallStatus() {
