@@ -18,8 +18,7 @@ public class VirtualPet {
 		this.hungerLevel = 20;
 		this.thirstLevel = 20;
 		this.fireLevel = 20;
-		// this.boredomLevel = 60;
-		// this.sicknessLevel = 5;
+
 	}
 
 	// Getters of Method
@@ -38,34 +37,23 @@ public class VirtualPet {
 	public int getFireLevel() {
 		return fireLevel;
 	}
-	//
-	// public int getboredomLevel() {
-	// return boredomLevel;
-	// }
-	//
-	// public int getsicknessLevel() {
-	// return sicknessLevel;
-	// }
 
 	// Methods
 
 	// Feeding Method - Hunger goes down, Fire Level goes up
 	public void feed() {
-//		if (hungerLevel <= 0) {
-//			System.out.println(nameOfPet + " cannot fit anymore creatures in his belly!");
-//		}else
-			if (hungerLevel-10<=0){
-			 hungerLevel = 0;
-	System.out.println("no more!!!");
-}	 else {
+		if (hungerLevel - 10 <= 0) {
+			hungerLevel = 0;
+			System.out.println(nameOfPet + " is stuffed and cannot fit anymore creatures in its belly!");
+		} else {
 			hungerLevel = hungerLevel - 10;
 			fireLevel = fireLevel + 5;
 			System.out.println("Thank you for feeding " + nameOfPet + "!");
 
 		}
 
-	
 	}
+
 	// Watering Dragon - Thirst Level goes does, Fire Level goes down
 	public void water() {
 		if (thirstLevel <= 100) {
@@ -102,11 +90,12 @@ public class VirtualPet {
 
 	// tick Method - with time- hunger, thirst, & fire level increase
 	public void tickEffect() {
-		if(fireLevel>=0 || hungerLevel>0 || thirstLevel>0) {
+		if (fireLevel >= 0 || hungerLevel > 0 || thirstLevel > 0) {
 			fireLevel = fireLevel + 3;
 			hungerLevel = hungerLevel + 3;
-			thirstLevel = thirstLevel + 3;}
-		
+			thirstLevel = thirstLevel + 3;
+		}
+
 	}
 
 	public void overallStatus() {
