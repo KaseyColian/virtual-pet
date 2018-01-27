@@ -15,9 +15,9 @@ public class VirtualPet {
 	// Constructor = behavior of pet beginningName is parameter
 	public VirtualPet(String beginningName) {
 		this.nameOfPet = beginningName;
-		this.hungerLevel = 50;
-		this.thirstLevel = 50;
-		this.fireLevel = 50;
+		this.hungerLevel = 20;
+		this.thirstLevel = 20;
+		this.fireLevel = 20;
 		// this.boredomLevel = 60;
 		// this.sicknessLevel = 5;
 	}
@@ -51,22 +51,26 @@ public class VirtualPet {
 
 	// Feeding Method - Hunger goes down, Fire Level goes up
 	public void feed() {
-		if (hungerLevel < 100) {
+//		if (hungerLevel <= 0) {
+//			System.out.println(nameOfPet + " cannot fit anymore creatures in his belly!");
+//		}else
+			if (hungerLevel-10<=0){
+			 hungerLevel = 0;
+	System.out.println("no more!!!");
+}	 else {
 			hungerLevel = hungerLevel - 10;
 			fireLevel = fireLevel + 5;
 			System.out.println("Thank you for feeding " + nameOfPet + "!");
 
-		} else {
-			System.out.println(nameOfPet + " cannot fit anymore creatures in his belly!");
 		}
 
+	
 	}
-
 	// Watering Dragon - Thirst Level goes does, Fire Level goes down
 	public void water() {
 		if (thirstLevel <= 100) {
-			thirstLevel=thirstLevel-10;
-			fireLevel=fireLevel-5;
+			thirstLevel = thirstLevel - 10;
+			fireLevel = fireLevel - 5;
 			System.out.println("Thank you for the drink!");
 		} else {
 			System.out.println(nameOfPet + "is full of water and won't be able to breath flames if he drinks anymore!");
@@ -90,16 +94,19 @@ public class VirtualPet {
 	// kills pet if fire, hunger, or thirst level hits 100.
 	public void killPet() {
 		if (fireLevel >= 100 || hungerLevel >= 100 || thirstLevel >= 100) {
-			System.out.println("You have killed " + nameOfPet + " because you neglected its needs! Be a better dragon master!");
+			System.out.println("You have killed " + nameOfPet
+					+ " because you neglected its other needs! Be a better dragon master!");
 			System.exit(0);
 		}
 	}
 
 	// tick Method - with time- hunger, thirst, & fire level increase
 	public void tickEffect() {
-		fireLevel = fireLevel + 3;
-		hungerLevel = hungerLevel + 3;
-		thirstLevel = thirstLevel + 3;
+		if(fireLevel>=0 || hungerLevel>0 || thirstLevel>0) {
+			fireLevel = fireLevel + 3;
+			hungerLevel = hungerLevel + 3;
+			thirstLevel = thirstLevel + 3;}
+		
 	}
 
 	public void overallStatus() {
