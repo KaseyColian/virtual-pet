@@ -6,18 +6,19 @@ public class VirtualPetApp {
 
 	public static void main(String[] args) {
 	Scanner input = new Scanner(System.in);
-	
-	VirtualPet myPet = new VirtualPet();
+	System.out.println("Please enter the name of your pet dragon.");
+	String userEnteredNameOfPet = input.nextLine();
+	VirtualPet myPet = new VirtualPet(userEnteredNameOfPet);
 
 	String optionEntered = "";
 	
-	System.out.println("Hello, friend! Please help me be better! Select an option below:");
+	System.out.println("Hello, friend! Please help " + myPet.getNameOfPet()+ " be the best dragone ever!! Select an option below:");
 	System.out.println("Type 1 to feed me tasty little critters.");
 	System.out.println("Type 2 to give me my beverage of choice.");
 	System.out.println("Type 3 to let me relieve myself of the fire building up inside of me.");
-	System.out.println("Type 4 to play with me.");
-	System.out.println("Type 5 to give me my magical health potion.");
-	System.out.println("Type 6 to check on my status and put me to bed.");
+//	System.out.println("Type 4 to play with me.");
+//	System.out.println("Type 5 to give me my magical health potion.");
+	System.out.println("Type 6 to put me to bed.");
 	optionEntered = input.nextLine();
 	
 	
@@ -34,7 +35,7 @@ public class VirtualPetApp {
 //	}
 
 	//Trying switch for menu items:
-	
+
 	switch (optionEntered) {
 	case "1":
 		myPet.feed(+5);
@@ -46,9 +47,7 @@ public class VirtualPetApp {
 	default:	
 		System.out.println("Thanks for playing!");
 	}
+	System.out.println(myPet.toString());;
 	
-	System.out.println();
-	
-	}
-	
-}
+		
+	}}
