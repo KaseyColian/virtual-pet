@@ -23,7 +23,7 @@ public class VirtualPetApp {
 			System.out.println("Type 3 to release the fire building inside of " + myPet.getNameOfPet() + ".");
 			System.out.println("Type 4 to check " + myPet.getNameOfPet() + "'s current state of existence.");
 			System.out.println("Type 5 to quit the game.");
-			String optionEntered = input.nextLine();  //crossed out string optionEntered declaration before do loop.  Added "String" in front of option entered to declare & initialize in one line.
+			String optionEntered = input.nextLine();
 //			myPet.killPet();
 			switch (optionEntered) {
 			case "1":
@@ -52,8 +52,7 @@ public class VirtualPetApp {
 			System.out.println(myPet.toString());
 		} while (gameInput = true);
 
-		// default:
-		// System.out.println("Thanks for playing!");
+
 		input.close();
 	}
 }

@@ -47,15 +47,15 @@ public class VirtualPet {
 			System.exit(0);
 		}
 	}
-	
+
 	// tick Method - with time- hunger, thirst, & fire level increase
 	public void tickEffect() {
-		if (fireLevel >=0 || hungerLevel >=0 || thirstLevel >=0) {
+		if (fireLevel >= 0 || hungerLevel >= 0 || thirstLevel >= 0) {
 			fireLevel = fireLevel + 6;
 			hungerLevel = hungerLevel + 6;
 			thirstLevel = thirstLevel + 6;
 		}
-		
+
 	}
 
 	// Feeding Method - Hunger goes down, Fire Level goes up
@@ -63,21 +63,23 @@ public class VirtualPet {
 		if (hungerLevel - 10 <= 0) {
 			hungerLevel = 0;
 			System.out.println(nameOfPet + " is stuffed and cannot fit anymore creatures in its belly!");
+//			killPet();
 		} else {
 			hungerLevel = hungerLevel - 10;
 			fireLevel = fireLevel + 5;
-			killPet();
+//			killPet();
 			System.out.println("Thank you for feeding " + nameOfPet + "!");
 
 		}
-
+		killPet();
 	}
 
 	// Watering Dragon - Thirst Level goes does, Fire Level goes down
 	public void water() {
-		if (thirstLevel -10<=10) {
-			thirstLevel=0;
-			System.out.println(nameOfPet + "is full of Elven tears and won't be able to breath flames if it drinks anymore!");
+		if (thirstLevel - 10 <= 10) {
+			thirstLevel = 0;
+			System.out.println(
+					nameOfPet + "is full of Elven tears and won't be able to breath flames if it drinks anymore!");
 		} else {
 			thirstLevel = thirstLevel - 10;
 			fireLevel = fireLevel - 5;
@@ -89,8 +91,8 @@ public class VirtualPet {
 
 	// Amount of Fire needed to be released - Fire Level Goes Down
 	public void fire() {
-		if (fireLevel -10 <= 0) {
-			fireLevel=0;
+		if (fireLevel - 10 <= 0) {
+			fireLevel = 0;
 			System.out.println(nameOfPet + " has huffed and puffed and blew out all its fire!");
 		} else {
 			fireLevel = fireLevel - 10;
@@ -101,7 +103,6 @@ public class VirtualPet {
 
 		}
 	}
-
 
 	public void overallStatus() {
 		System.out.println("");
