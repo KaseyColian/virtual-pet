@@ -23,7 +23,7 @@ public class VirtualPetApp {
 			
 			switch (optionEntered) {
 			case "1":
-				myPet.feed(2);
+				myPet.feed();
 				break;
 			case "2":
 				myPet.water(+5);

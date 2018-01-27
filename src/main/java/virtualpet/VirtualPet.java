@@ -51,7 +51,7 @@ public class VirtualPet {
 	// Methods
 
 	// Feeding Method - Hunger goes down, Fire Level goes up
-	public void feed(int amountToFeed) {
+	public void feed() {
 		if (hungerLevel < 100) {
 			hungerLevel--;
 			fireLevel++;
