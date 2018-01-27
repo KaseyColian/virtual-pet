@@ -9,8 +9,8 @@ public class VirtualPet {
 	private int hungerLevel;
 	private int thirstLevel;
 	private int fireLevel;
-//	private int boredomLevel;
-//	private int sicknessLevel;
+	// private int boredomLevel;
+	// private int sicknessLevel;
 
 	// Constructor = behavior of pet beginningName is parameter
 	public VirtualPet(String beginningName) {
@@ -22,7 +22,6 @@ public class VirtualPet {
 		// this.sicknessLevel = 5;
 	}
 
-	
 	// Getters of Method
 	public String getNameOfPet() {
 		return nameOfPet;
@@ -53,8 +52,8 @@ public class VirtualPet {
 	// Feeding Method - Hunger goes down, Fire Level goes up
 	public void feed() {
 		if (hungerLevel < 100) {
-			hungerLevel=hungerLevel-10;
-			fireLevel=fireLevel+10;
+			hungerLevel = hungerLevel - 10;
+			fireLevel = fireLevel + 10;
 			System.out.println("Thank you for feeding " + nameOfPet + "!");
 
 		} else {
@@ -64,7 +63,7 @@ public class VirtualPet {
 	}
 
 	// Watering Dragon - Thirst Level goes does, Fire Level goes down
-	public void water(int amountToWater) {
+	public void water() {
 		if (thirstLevel <= 100) {
 			thirstLevel--;
 			fireLevel--;
@@ -76,7 +75,7 @@ public class VirtualPet {
 	}
 
 	// Amount of Fire needed to be released - Fire Level Goes Down
-	public void fire(int amountOfFire) {
+	public void fire() {
 		if (fireLevel <= 0) {
 			System.out.println("I don't have any fire to exhale!");
 		} else {
@@ -97,10 +96,10 @@ public class VirtualPet {
 	}
 
 	// tick Method - with time- hunger, thirst, & fire level increase
-	public void timeEffect() {
-		fireLevel=fireLevel+3;
-		hungerLevel=hungerLevel+3;
-		thirstLevel=thirstLevel+3;
+	public void tickEffect() {
+		fireLevel = fireLevel + 3;
+		hungerLevel = hungerLevel + 3;
+		thirstLevel = thirstLevel + 3;
 	}
 
 	public void overallStatus() {
