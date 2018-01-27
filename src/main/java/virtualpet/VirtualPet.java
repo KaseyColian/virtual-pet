@@ -53,7 +53,7 @@ public class VirtualPet {
 	public void feed() {
 		if (hungerLevel < 100) {
 			hungerLevel = hungerLevel - 10;
-			fireLevel = fireLevel + 10;
+			fireLevel = fireLevel + 5;
 			System.out.println("Thank you for feeding " + nameOfPet + "!");
 
 		} else {
@@ -65,8 +65,8 @@ public class VirtualPet {
 	// Watering Dragon - Thirst Level goes does, Fire Level goes down
 	public void water() {
 		if (thirstLevel <= 100) {
-			thirstLevel--;
-			fireLevel--;
+			thirstLevel=thirstLevel-10;
+			fireLevel=fireLevel-5;
 			System.out.println("Thank you for the drink!");
 		} else {
 			System.out.println(nameOfPet + "is full of water and won't be able to breath flames if he drinks anymore!");
@@ -79,7 +79,7 @@ public class VirtualPet {
 		if (fireLevel <= 0) {
 			System.out.println("I don't have any fire to exhale!");
 		} else {
-			fireLevel = fireLevel - 5;
+			fireLevel = fireLevel - 10;
 			hungerLevel = hungerLevel + 5;
 			thirstLevel = thirstLevel - 5;
 
