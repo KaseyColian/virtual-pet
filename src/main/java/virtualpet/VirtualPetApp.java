@@ -12,28 +12,11 @@ public class VirtualPetApp {
 
 		String optionEntered = "";
 		boolean gameInput = true;
-
-		// Consider switch instead of if/else.
-		// if (optionEntered.equals("1")) {
-		// System.out.println("Thank you for taking care of my belly, I love tasty
-		// creatures!");
-		// myPet.feed(5);
-		//
-		// }else if (optionEntered.equals("2")) {
-		// myPet.water(5);
-		// System.out.println("Thanks for quenching my thirst!");
-		// }else if (optionEntered.equals("3")){
-		// myPet.fire(5);
-		// }
-
-		// Trying switch for menu items:
-		// do {myPet.timeEffect()}
 		do {
-			System.out.println(
-					"Help " + myPet.getNameOfPet() + " be the happiest dragon ever! Select an option below:");
+			System.out.println(	"Help " + myPet.getNameOfPet() + " be the happiest dragon ever! Select an option below:");
 			System.out.println("Type 1 to feed me tasty little critters.");
-			System.out.println("Type 2 to give me my beverage of choice.");
-			System.out.println("Type 3 to let me relieve myself of the fire building up inside of me.");
+			System.out.println("Type 2 to let me drink from the pool of Elven tears.");
+			System.out.println("Type 3 to release the fire building inside of me.");
 			System.out.println("Type 4 to check my current state of existence.");
 			System.out.println("Type 5 to quit the game.");
 			optionEntered = input.nextLine();
