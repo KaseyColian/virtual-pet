@@ -37,11 +37,16 @@ public class VirtualPetApp {
 			case "5":
 				System.out.println("Goodbye, friend!");
 				System.exit(0);
+				break;
+			default:System.out.println(optionEntered + " was not a valid option.  Type a number from 1-5:");
+//			myPet.killPet();
+			
+					
 			}
 			System.out.println(myPet.toString());
 		} while (gameInput = true);
 		// default:
 		// System.out.println("Thanks for playing!");
-
+input.close();
 	}
 }
