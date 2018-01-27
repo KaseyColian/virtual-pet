@@ -10,7 +10,7 @@ public class VirtualPetApp {
 		String userEnteredNameOfPet = input.nextLine();
 		VirtualPet myPet = new VirtualPet(userEnteredNameOfPet);
 
-		String optionEntered = "";
+//		String optionEntered = "";
 		boolean gameInput = true;
 
 		System.out.println("Help " + myPet.getNameOfPet()
@@ -24,7 +24,7 @@ public class VirtualPetApp {
 			System.out.println("Type 3 to release the fire building inside of " + myPet.getNameOfPet() + ".");
 			System.out.println("Type 4 to check " + myPet.getNameOfPet() + "'s current state of existence.");
 			System.out.println("Type 5 to quit the game.");
-			optionEntered = input.nextLine();
+			String optionEntered = input.nextLine();  //crossed out string optionEntered declaration before do loop.  Added "String" in front of option entered to declare & initialize in one line.
 			myPet.tickEffect();
 			myPet.killPet();
 			switch (optionEntered) {

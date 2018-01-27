@@ -90,7 +90,7 @@ public class VirtualPet {
 	// kills pet if fire, hunger, or thirst level hits 100.
 	public void killPet() {
 		if (fireLevel >= 100 || hungerLevel >= 100 || thirstLevel >= 100) {
-			System.out.println("You have killed " + nameOfPet + " because you neglected its needs! Be better!");
+			System.out.println("You have killed " + nameOfPet + " because you neglected its needs! Be a better dragon master!");
 			System.exit(0);
 		}
 	}
