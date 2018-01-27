@@ -57,13 +57,14 @@ public class VirtualPet {
 	
 	
 	
-//Feeding Method - Hunger goes does, Fire Level goes up
+//Feeding Method - Hunger goes down, Fire Level goes up
 	public void feed(int amountToFeed) {
-		if (hungerLevel <= 100) {
+		if (hungerLevel < 100) {
 			hungerLevel--;
 			fireLevel++;
 			System.out.println("Thank you for feeding " + nameOfPet + "!");
-		} else {
+		
+	}else {
 			System.out.println(nameOfPet + " cannot fit anymore creatures in his belly!");
 		}
 	
@@ -86,13 +87,22 @@ public void fire (int amountOfFire) {
 	if (fireLevel <=0) {
 		System.out.println("I don't have any fire to exhale!");
 	}else {
-		fireLevel--;
+		fireLevel = fireLevel-5;
+		hungerLevel = hungerLevel+3;
+		thirstLevel=thirstLevel-5;
+		
 		System.out.println("Thank you for relieving me of my fire! I feel much better now!");
 		}
 }
+//kills pet if fire, hunger, or thirst level hits 100.
+public void killPet() {
+	if (fireLevel>=100 || hungerLevel>=100 || thirstLevel>=100) {
+		System.out.println("You have killed " + nameOfPet + " because you neglected its needs! Be better!");
+	System.exit(0);}
+}
 
 //tick Method - with time- hunger, thirst, & fire level increase	
-	private void timeEffect(int timeBringsChange) {
+	public void timeEffect() {
 		fireLevel++;
 		hungerLevel++;
 		thirstLevel++;
@@ -107,7 +117,7 @@ public void fire (int amountOfFire) {
  
 		 @Override
 		 public String toString() {
-			return nameOfPet + "'s overall status is currently: \nHunger: " + hungerLevel + "\nThirst: " +
-				 thirstLevel + "\nWaste: " + fireLevel
-		 + "\nBoredom: " + boredomLevel + "\nSickness: " + sicknessLevel;}
+			return nameOfPet + " is currently feeling: "+ "\nHunger: " + hungerLevel + "\nThirst: " +
+				 thirstLevel + "\nInternal Fire: " + fireLevel
+		 + "\nBoredom: " + boredomLevel + "\nSickness: " + sicknessLevel + "\nThank you so much!\n\n";}
 }
