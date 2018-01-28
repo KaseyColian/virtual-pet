@@ -51,9 +51,9 @@ public class VirtualPet {
 	// tick Method - with time- hunger, thirst, & fire level increase
 	public void tickEffect() {
 		if (fireLevel >= 0 || hungerLevel >= 0 || thirstLevel >= 0) {
-			fireLevel = fireLevel + 6;
-			hungerLevel = hungerLevel + 6;
-			thirstLevel = thirstLevel + 6;
+			fireLevel = fireLevel + 4;
+			hungerLevel = hungerLevel + 4;
+			thirstLevel = thirstLevel + 4;
 		}
 
 	}
@@ -63,15 +63,13 @@ public class VirtualPet {
 		if (hungerLevel - 10 <= 0) {
 			hungerLevel = 0;
 			System.out.println(nameOfPet + " is stuffed and cannot fit anymore creatures in its belly!");
-//			killPet();
 		} else {
 			hungerLevel = hungerLevel - 10;
 			fireLevel = fireLevel + 5;
-//			killPet();
 			System.out.println("Thank you for feeding " + nameOfPet + "!");
 
 		}
-		killPet();
+		// killPet();
 	}
 
 	// Watering Dragon - Thirst Level goes does, Fire Level goes down
@@ -79,17 +77,17 @@ public class VirtualPet {
 		if (thirstLevel - 10 <= 10) {
 			thirstLevel = 0;
 			System.out.println(
-					nameOfPet + "is full of Elven tears and won't be able to breath flames if it drinks anymore!");
+					nameOfPet + " is full of Elven tears and won't be able to breath flames if it drinks anymore!");
 		} else {
 			thirstLevel = thirstLevel - 10;
 			fireLevel = fireLevel - 5;
-			killPet();
 			System.out.println(nameOfPet + " says thank you, it was starting to feel parched!");
 		}
 
 	}
 
-	// Amount of Fire needed to be released - Fire Level Goes Down
+	// Amount of Fire needed to be released - Fire Level Goes Down if user selects
+	// 2, Thirst Goes Down, Hunger Goes Up
 	public void fire() {
 		if (fireLevel - 10 <= 0) {
 			fireLevel = 0;
@@ -98,19 +96,18 @@ public class VirtualPet {
 			fireLevel = fireLevel - 10;
 			hungerLevel = hungerLevel + 5;
 			thirstLevel = thirstLevel - 5;
-			killPet();
 			System.out.println("Thank you for relieving me of my fire, I feel much better now!");
 
 		}
 	}
 
-	public void overallStatus() {
-		System.out.println("");
-	}
+//	public void overallStatus() {
+//		System.out.println("");
+//	}
 
 	@Override
 	public String toString() {
-		return nameOfPet + " is now feeling: " + "\nHunger: " + hungerLevel + "\nThirst: " + thirstLevel
-				+ "\nInternal Fire: " + fireLevel + "\n\n";
+		return "\n" +nameOfPet + " is now feeling: " + "\nHunger: " + hungerLevel + "\nThirst: " + thirstLevel
+				+ "\nInternal Fire: " + fireLevel + "\n";
 	}
 }
