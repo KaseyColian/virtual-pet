@@ -14,10 +14,11 @@ public class VirtualPetApp {
 
 		System.out.println("Help " + myPet.getNameOfPet()
 				+ " become the happiest dragon ever! \nThe higher the levels go, the more upset " + myPet.getNameOfPet()
-				+ " becomes.\nAnd the more you interact with " + myPet.getNameOfPet() + ", the needier it becomes. Good luck!");
+				+ " becomes.\nAnd the more you interact with " + myPet.getNameOfPet()
+				+ ", the needier it becomes. Good luck!");
 
 		do {
-		System.out.println(myPet.toString());
+			System.out.println(myPet.toString());
 			myPet.killPet();
 			System.out.println("\nSelect an option below:");
 			System.out.println("Type 1 to feed " + myPet.getNameOfPet() + " tasty little critters.");
@@ -48,13 +49,9 @@ public class VirtualPetApp {
 			default:
 				System.out.println(optionEntered + " was not a valid option.  Please type a number from 1-5:");
 
-
 			}
-//			myPet.killPet();
-//			myPet.tickEffect();
-//			System.out.println(myPet.toString());
-		} while (gameInput = true);
 
+		} while (gameInput = true);
 
 		input.close();
 	}
