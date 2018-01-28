@@ -23,7 +23,7 @@ public class VirtualPetApp {
 			System.out.println("Type 1 to feed " + myPet.getNameOfPet() + " tasty little critters.");
 			System.out.println("Type 2 to let " + myPet.getNameOfPet() + " drink from the pool of Elven tears.");
 			System.out.println("Type 3 to release the fire igniting inside of " + myPet.getNameOfPet() + ".");
-			System.out.println("Type 4 to check " + myPet.getNameOfPet() + "'s current state of existence.");
+			System.out.println("Type 4 to check on " + myPet.getNameOfPet() + " and see how it's feeling.");
 			System.out.println("Type 5 to quit the game.");
 			String optionEntered = input.nextLine();
 			myPet.tickEffect();
