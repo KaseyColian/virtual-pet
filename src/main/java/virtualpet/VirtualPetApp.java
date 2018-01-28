@@ -46,7 +46,9 @@ public class VirtualPetApp {
 				System.exit(0);
 				break;
 			default:
-				System.out.println(optionEntered + " is not a valid option.\nEvery incorrect response causes more stress to " + myPet.getNameOfPet() + ", so be careful! \nPlease type a number from 1-5:");
+				System.out.println(
+						optionEntered + " is not a valid option.\nEvery incorrect response causes more stress to "
+								+ myPet.getNameOfPet() + ", so be careful! \nPlease type a number from 1-5:");
 
 			}
 

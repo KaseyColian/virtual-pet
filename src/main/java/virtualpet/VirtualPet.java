@@ -45,6 +45,27 @@ public class VirtualPet {
 	}
 
 	// Methods
+	public void makeTheDragon() {
+
+		System.out.println("                      ^\\    ^     ");
+		System.out.println("                     / \\\\  / \\    ");
+		System.out.println("                    /.  \\\\/   \\      |\\___/|   ");
+		System.out.println("  *----*          //   |  \\\\    \\  __/  O  O\\   ");
+		System.out.println("  |   /          / /   |   \\\\    \\_\\/  \\     \\     ");
+		System.out.println("/  /\\/          /   /  |    \\\\\\   _\\/    '@___@      ");
+		System.out.println("/  /         /    /    |     \\\\ _\\/       |U");
+		System.out.println("|  |       /     /     |      \\\\/        |\\");
+		System.out.println("\\  |     /_     /      |       \\\\  )   \\ _|_\\");
+		System.out.println("\\   \\       ~-./_ _    |    .- ; (  \\_ _ _,\\'\\");
+		System.out.println("~    ~.           .-~-.|.-*      _        {-,\\");
+		System.out.println("\\      ~-. _ .-~                 \\      /\\'\\");
+		System.out.println("\\                   }            {   .*\\");
+		System.out.println("~.                 '-/        /.-~----.\\");
+		System.out.println("~- _             /        >..----.\\\\\\\\");
+		System.out.println("~ - - - - ^}_ _ _ _ _ _ _.-\\\\\\\\");
+
+	}
+
 	// kills pet if fire, hunger, or thirst level hits 100.
 	public void killPet() {
 		if (fireLevel >= 100 || hungerLevel >= 100 || thirstLevel >= 100) {
@@ -78,6 +99,7 @@ public class VirtualPet {
 	public void feed() {
 		if (hungerLevel - 10 <= 0) {
 			hungerLevel = 0;
+			makeTheDragon();
 			System.out.println(nameOfPet + " is stuffed and cannot fit anymore creatures in its belly!");
 		} else {
 			hungerLevel = hungerLevel - 10;
@@ -93,6 +115,7 @@ public class VirtualPet {
 	public void water() {
 		if (thirstLevel - 10 <= 10) {
 			thirstLevel = 0;
+			makeTheDragon();
 			System.out.println(
 					nameOfPet + " is full of Elven tears and won't be able to breath flames if it drinks anymore!");
 		} else {
@@ -103,17 +126,10 @@ public class VirtualPet {
 
 	}
 
-	public void setGameRun() { // Creating this in the class in case it needs used more in the future. (Instead
-								// of just writing it directly into the app.)1
-		boolean gameRunning = this.gameRunning;
-
-	}
-
-	// Amount of Fire needed to be released - Fire Level Goes Down if user selects
-	// 2, Thirst Goes Down, Hunger Goes Up
 	public void fire() {
 		if (fireLevel - 10 <= 0) {
 			fireLevel = 0;
+			makeTheDragon();
 			System.out.println(nameOfPet + " has huffed and puffed and blew out all its fire!");
 		} else {
 			fireLevel = fireLevel - 10;
@@ -123,6 +139,15 @@ public class VirtualPet {
 
 		}
 	}
+
+	public void setGameRun() { // Creating this in the class in case it needs used more in the future. (Instead
+								// of just writing it directly into the app.)1
+		boolean gameRunning = this.gameRunning;
+
+	}
+
+	// Amount of Fire needed to be released - Fire Level Goes Down if user selects
+	// 2, Thirst Goes Down, Hunger Goes Up
 
 	@Override
 	public String toString() {
