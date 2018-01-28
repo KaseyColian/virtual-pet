@@ -1,5 +1,7 @@
 package virtualpet;
 
+import java.util.concurrent.ThreadLocalRandom;
+
 public class VirtualPet {
 
 	// VirtualPet bobTheDragon = new VirtualPet();
@@ -9,6 +11,7 @@ public class VirtualPet {
 	private int hungerLevel;
 	private int thirstLevel;
 	private int fireLevel;
+	private boolean gameRunning;
 
 	// Constructor = behavior of pet beginningName is parameter
 	public VirtualPet(String beginningName) {
@@ -16,6 +19,7 @@ public class VirtualPet {
 		this.hungerLevel = 20;
 		this.thirstLevel = 20;
 		this.fireLevel = 20;
+		this.gameRunning = true;
 
 	}
 
@@ -36,6 +40,10 @@ public class VirtualPet {
 		return fireLevel;
 	}
 
+	public boolean getGameRunning() {
+		return gameRunning;
+	}
+
 	// Methods
 	// kills pet if fire, hunger, or thirst level hits 100.
 	public void killPet() {
@@ -49,10 +57,19 @@ public class VirtualPet {
 	// tick Method - with time- hunger, thirst, & fire level increase - may trigger
 	// kill pet method.
 	public void tickEffect() {
-		if (fireLevel >= 0 || hungerLevel >= 0 || thirstLevel >= 0) {
+		if (fireLevel >= 0 && fireLevel <= 55) {
 			fireLevel = fireLevel + 4;
+		}
+		if (hungerLevel >= 0 && hungerLevel <= 55) {
 			hungerLevel = hungerLevel + 4;
+		}
+		if (thirstLevel >= 0 && thirstLevel <= 55) {
 			thirstLevel = thirstLevel + 4;
+		} else if (fireLevel > 55 || hungerLevel > 55 || thirstLevel > 55) {
+			int randomEffect = ThreadLocalRandom.current().nextInt(1, 7);
+			fireLevel = (fireLevel + randomEffect);
+			hungerLevel = (hungerLevel + randomEffect);
+			thirstLevel = (thirstLevel + randomEffect);
 		}
 
 	}
@@ -70,6 +87,7 @@ public class VirtualPet {
 		}
 
 	}
+	// Set game to Run in Loop while this value is set as true.
 
 	// Watering Dragon - Thirst Level goes does, Fire Level goes down
 	public void water() {
@@ -82,6 +100,12 @@ public class VirtualPet {
 			fireLevel = fireLevel - 5;
 			System.out.println(nameOfPet + " says thank you, it was starting to feel parched!");
 		}
+
+	}
+
+	public void setGameRun() { // Creating this in the class in case it needs used more in the future. (Instead
+								// of just writing it directly into the app.)1
+		boolean gameRunning = this.gameRunning;
 
 	}
 
@@ -102,7 +126,7 @@ public class VirtualPet {
 
 	@Override
 	public String toString() {
-		return "\n" + nameOfPet + " is now feeling: " + "\nHunger: " + hungerLevel + "\nThirst: " + thirstLevel
+		return "\n" + nameOfPet + "'s current condition is: " + "\nHunger: " + hungerLevel + "\nThirst: " + thirstLevel
 				+ "\nInternal Fire: " + fireLevel + "\n";
 	}
 }
