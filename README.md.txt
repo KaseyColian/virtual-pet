@@ -1,2 +1,0 @@
-*Created test, class, & app
-
