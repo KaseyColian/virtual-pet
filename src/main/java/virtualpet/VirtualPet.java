@@ -16,9 +16,9 @@ public class VirtualPet {
 	// Constructor = behavior of pet beginningName is parameter
 	public VirtualPet(String beginningName) {
 		this.nameOfPet = beginningName;
-		this.hungerLevel = 20;
-		this.thirstLevel = 20;
-		this.fireLevel = 20;
+		this.hungerLevel = ThreadLocalRandom.current().nextInt(15, 45);
+		this.thirstLevel = ThreadLocalRandom.current().nextInt(20, 50);
+		this.fireLevel = ThreadLocalRandom.current().nextInt(10, 50);
 		this.gameRunning = true;
 
 	}
@@ -87,12 +87,18 @@ public class VirtualPet {
 		if (thirstLevel >= 0 && thirstLevel <= 55) {
 			thirstLevel = thirstLevel + 4;
 		} else if (fireLevel > 55 || hungerLevel > 55 || thirstLevel > 55) {
-			int randomEffect = ThreadLocalRandom.current().nextInt(1, 7);
+			int randomEffect = ThreadLocalRandom.current().nextInt(1, 6);
 			fireLevel = (fireLevel + randomEffect);
 			hungerLevel = (hungerLevel + randomEffect);
 			thirstLevel = (thirstLevel + randomEffect);
 		}
 
+	}
+	
+	public void setGameRun() { // Creating this in the class in case it needs used more in the future. (Instead
+		// of just writing it directly into the app.)1
+		boolean gameRunning = this.gameRunning;
+		
 	}
 
 	// Feeding Method - Hunger goes down, Fire Level goes up
@@ -135,15 +141,9 @@ public class VirtualPet {
 			fireLevel = fireLevel - 10;
 			hungerLevel = hungerLevel + 5;
 			thirstLevel = thirstLevel - 5;
-			System.out.println("Thank you for relieving me of my fire, I feel much better now!");
+			System.out.println(nameOfPet + " says thank you for letting it release some of its pent-up fire!");
 
 		}
-	}
-
-	public void setGameRun() { // Creating this in the class in case it needs used more in the future. (Instead
-								// of just writing it directly into the app.)1
-		boolean gameRunning = this.gameRunning;
-
 	}
 
 	// Amount of Fire needed to be released - Fire Level Goes Down if user selects
