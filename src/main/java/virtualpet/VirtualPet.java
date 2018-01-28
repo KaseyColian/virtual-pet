@@ -94,11 +94,12 @@ public class VirtualPet {
 		}
 
 	}
-	
+
+	// Set game to Run in Loop while this value is set as true.
 	public void setGameRun() { // Creating this in the class in case it needs used more in the future. (Instead
-		// of just writing it directly into the app.)1
+		// of just writing it directly into the app.
 		boolean gameRunning = this.gameRunning;
-		
+
 	}
 
 	// Feeding Method - Hunger goes down, Fire Level goes up
@@ -115,9 +116,8 @@ public class VirtualPet {
 		}
 
 	}
-	// Set game to Run in Loop while this value is set as true.
 
-	// Watering Dragon - Thirst Level goes does, Fire Level goes down
+	// Watering Method - Thirst Level goes does, Fire Level goes down
 	public void water() {
 		if (thirstLevel - 10 <= 10) {
 			thirstLevel = 0;
@@ -132,6 +132,9 @@ public class VirtualPet {
 
 	}
 
+	// Fire Method - Amount of Fire needed to be released - Fire Level Goes Down if
+	// user selects
+	// 2, Thirst Goes Down, Hunger Goes Up
 	public void fire() {
 		if (fireLevel - 10 <= 0) {
 			fireLevel = 0;
@@ -145,9 +148,6 @@ public class VirtualPet {
 
 		}
 	}
-
-	// Amount of Fire needed to be released - Fire Level Goes Down if user selects
-	// 2, Thirst Goes Down, Hunger Goes Up
 
 	@Override
 	public String toString() {
