@@ -12,9 +12,9 @@ public class VirtualPet {
 	private int thirstLevel;
 	private int fireLevel;
 
-	// constructor = behavior of pet beginningName is parameter
-	public VirtualPet(String beginningName) {
-		this.nameOfPet = beginningName;
+	// constructor = behavior of pet userEnteredName is parameter
+	public VirtualPet(String userEnteredNameOfPet) {// beginningName instead of userEnteredNameOfPet
+		this.nameOfPet = userEnteredNameOfPet;// beginninngName
 		this.gameRunning = true;
 		this.hungerLevel = ThreadLocalRandom.current().nextInt(15, 45);
 		this.thirstLevel = ThreadLocalRandom.current().nextInt(20, 50);
@@ -50,7 +50,6 @@ public class VirtualPet {
 	// of just writing it directly into the App.)
 	public void setGameRun() {
 		boolean gameRunning = this.gameRunning;
-
 	}
 
 	// Make The Dragon Method = will print out ASCII after either hungerLevel,
@@ -109,7 +108,7 @@ public class VirtualPet {
 
 	}
 
-	// Feed Method - hungerLevel goes down, fireLevel goes up. makeTheDRagon
+	// Feed Method - hungerLevel goes down, fireLevel goes up. makeTheDragon
 	// method called if hungerLevel=0.
 	public void feed() {
 		if (hungerLevel - 10 <= 0) {
@@ -138,7 +137,6 @@ public class VirtualPet {
 			fireLevel = fireLevel - 5;
 			System.out.println(nameOfPet + " says thank you, it was starting to feel parched!");
 		}
-
 	}
 
 	// Fire Method - fireLevel goes down, thirstLevel goes down, hungerLevel goes
@@ -155,6 +153,7 @@ public class VirtualPet {
 			System.out.println(nameOfPet + " says thank you for letting it release some of its pent-up fire!");
 
 		}
+
 	}
 
 	// toString Method = Will print out all current levels when user selects option.
@@ -165,4 +164,5 @@ public class VirtualPet {
 		return "\n" + nameOfPet + "'s current condition is: " + "\nHunger: " + hungerLevel + "\nThirst: " + thirstLevel
 				+ "\nInternal Fire: " + fireLevel + "\n";
 	}
+
 }
