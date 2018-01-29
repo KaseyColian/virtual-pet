@@ -1,4 +1,4 @@
-package mypet;
+package virtualpet;
 
 import org.junit.Test;
 import org.junit.Assert;
